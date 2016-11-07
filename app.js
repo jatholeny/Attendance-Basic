@@ -14,9 +14,9 @@ var mongoose = require("mongoose");
 //    else console.log("Connected to MongoDb")
 //});
 
-mongoose.connect('mongodb://heroku_vmvnkp2l:um0rgahqlheiog2j8k7qmb2h1p@ds027908.mongolab.com:27908/heroku_vmvnkp2l',function(err){
+mongoose.connect('mongoDB address',function(err){
   if(err){
-    console.log('Could not connect to mongodb on localhost');
+    console.log('Could not connect to mongodb');
   }else{
     console.log('Successfully connected to mongodb');
   }
