@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contactApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <!--<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.2/angular-material.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <!--<script src="bower_components/angular/angular.js"></script>-->
+    <!--<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>-->
+    <!--<script src="bower_components/angular-animate/angular-animate.min.js"></script>-->
+    <!--<script src="bower_components/angular-aria/angular-aria.min.js"></script>-->
+    <!--<script src="bower_components/angular-material/angular-material.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-aria.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/0.11.2/angular-material.min.js"></script>
+    <script src="app/app.js"></script>
+</head>
+<body>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <h2>Attendance App</h2>
+        <md-content ng-show="user" style="position: absolute;right:10%;">
+            <md-menu-bar>
+                <md-menu>
+                    <md-button ng-show="user" class="md-primary md-raised" ng-click="$mdOpenMenu()" >Profile</md-button>
+                    <md-menu-content >
+                        <md-menu-item>
+                            <p ng-bind="user.name.first"></p>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <p ng-bind="user.name.last"></p>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <p ng-bind="user.email"></p>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button class="md-primary md-raised" ui-sref="profile">Edit</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-bar>
+        </md-content>
+        <md-button ng-show="user" class="md-accent md-raised" ui-sref="checkin" style="position: absolute;right:3%;">Check In</md-button>
+        <md-button ng-hide="user" class="md-accent md-raised" ui-sref="login" style="position: absolute;right:3%;">Login</md-button>
+    </div>
+    <md-content layout="row" layout-wrap >
+
+        <md-button ng-if="user.type === 'admin'" class="md-accent md-raised" ui-sref="landing.admin" flex="">Admin</md-button>
+        <md-button ng-show="user" class="md-primary md-raised" ui-sref="attendance" flex="">Attendance</md-button>
+    </md-content>
+</md-toolbar>
+<md-content ui-view class="md-padding" layout="row">
+
+</md-content>
+
+</body>
+</html>

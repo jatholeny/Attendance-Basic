@@ -1,0 +1,12 @@
+node_modules/
+.idea/
+config.json
+### Yeoman template
+node_modules/
+bower_components/
+*.log
+
+build/
+dist/
+
+

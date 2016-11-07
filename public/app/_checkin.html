@@ -1,0 +1,11 @@
+<md-content layout-padding layout="column" style="border: 1px solid #cccccc;border-top: none">
+    <md-datepicker ng-model="today" disabled>
+    </md-datepicker>
+    <md-content layout="row" layout-sm="column" layout-align="space-around center">
+        <md-button class="md-primary md-raised" ng-click="check(true)">Present</md-button>
+        <md-button class="md-warn md-raised" ng-click="check(false)">Absent</md-button>
+    </md-content>
+    <div style="text-align: center;color: red">
+        <small>{{message}}</small>
+    </div>
+</md-content>

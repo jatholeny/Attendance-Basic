@@ -1,0 +1,83 @@
+<section ng-cloak ng-show="user.type === 'admin'">
+
+    <md-content layout-padding  style="border-left: 1px solid #cccccc;border-right: 1px solid #cccccc;">
+        <md-divider ></md-divider>
+        <md-list>
+            <md-list-item ng-repeat="eachuser in userlist"  style="display:inline-block">
+                <img ng-src="{{eachuser.photo}}" class="md-avatar" alt="{{eachuser.email}}" />
+                <div>
+                    {{ eachuser.name.first }} {{ eachuser.name.last }}
+                </div>
+                <md-input-container>
+                    <label>Supervisor</label>
+                    <md-select ng-model="eachuser.supervisor">
+                        <md-option ng-repeat="eachuser in userlist" value="{{eachuser.name.first}}">
+                            {{eachuser.name.first}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container>
+                    <label>UserType</label>
+                    <md-select ng-model="eachuser.type">
+                        <md-option ng-repeat="eachtype in usertype" value="{{eachtype}}">
+                            {{eachtype}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+                <md-input-container>
+                    <label>Status</label>
+                    <md-select ng-model="eachuser.status">
+                        <md-option ng-repeat="eachstatus in userstatus" value="{{eachstatus}}">
+                            {{eachstatus}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-list-item>
+        </md-list>
+
+    </md-content>
+    <div layout="row">
+        <md-button class="md-raised md-primary" ng-click="save(userlist)" flex="100">SaveAll</md-button>
+    </div>
+    <md-divider ></md-divider>
+    <md-list>
+        <md-list-item ng-repeat="reminder in reminders">
+            <div layout layout-sm="column">
+                <p>Time{{ reminder.time }}</p>
+                <p>Send Email To {{ reminder.escalation }}</p>
+                <p>Buffer {{ reminder.buffer }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+    <md-divider ></md-divider>
+    <div layout layout-sm="column">
+        <md-input-container flex>
+            <label>Time</label>
+            <md-select ng-model="addtimerule.time">
+                <md-option ng-repeat="time in times" value="{{time}}">
+                    {{time}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>UserType</label>
+            <md-select ng-model="addtimerule.escalation">
+                <md-option ng-repeat="eachtype in usertype" value="{{eachtype}}">
+                    {{eachtype}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-input-container flex>
+            <label>Buffer</label>
+            <md-select ng-model="addtimerule.buffer">
+                <md-option ng-repeat="timebuffer in timebuffers" value="{{timebuffer}}">
+                    {{timebuffer}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="addtime(addtimerule)" style="height:100%;">Save</md-button>
+    </div>
+
+
+
+</section>

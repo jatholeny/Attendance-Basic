@@ -1,0 +1,36 @@
+<div ng-if="user" ng-cloak>
+    <md-content layout-padding  style="border-left: 1px solid #cccccc;border-right: 1px solid #cccccc;">
+        <form name="userForm">
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>First Name</label>
+                    <input ng-model="user.name.first">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Last Name</label>
+                    <input ng-model="user.name.last">
+                </md-input-container>
+            </div>
+            <md-input-container flex>
+                <label>Email</label>
+                <input ng-model="user.email">
+            </md-input-container>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Github</label>
+                    <input ng-model="user.address.github">
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Linkedin</label>
+                    <input ng-model="user.address.linkedin">
+                </md-input-container>
+            </div>
+        </form>
+        <div style="text-align: center;color: red">
+            <small>{{message}}</small>
+        </div>
+    </md-content>
+    <div layout="row">
+        <md-button class="md-primary md-raised" flex="" ng-click="save($event)">Save</md-button>
+    </div>
+</div>

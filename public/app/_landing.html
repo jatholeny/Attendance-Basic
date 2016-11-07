@@ -1,0 +1,23 @@
+<div style="padding-top: 80px;width: 100%" layout="row">
+    <div flex></div>
+    <div  flex="30" ng-cloak>
+
+        <div layout="column" >
+            <div layout="row" layout-align="space-between" layout-sm="column">
+                <input type="text" placeholder="First name" ng-model="user.name.first" class="user" flex required>
+                <div flex="5"></div>
+                <input type="text" placeholder="Last name" ng-model="user.name.last" class="user" flex required>
+            </div>
+            <input type="email" placeholder="Email" ng-model="user.username" class="user" required>
+            <input type="password" placeholder="Password" ng-model="user.password" class="user" required>
+            <md-checkbox class="md-primary" ng-model="admin">sign up as company</md-checkbox>
+            <input ng-if="(admin==true)" type="text" placeholder="Company" ng-model="user.organization" class="user" flex required>
+            <md-button class="md-primary md-raised" ng-click="register()" flex>Sign Up</md-button>
+            <md-button ng-href="{{googleUrl}}" class="md-raised md-accent" flex>Login with Google</md-button>
+
+        </div>
+
+    </div>
+    <div flex></div>
+
+</div>

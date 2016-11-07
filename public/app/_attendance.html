@@ -1,0 +1,24 @@
+<section ng-cloak >
+    <md-content layout-padding  style="border: 1px solid #cccccc;">
+        <md-list>
+            <md-list-item ng-repeat="attendance in result" layout="row">
+                <div flex="20">
+                    {{ attendance.date }}
+                </div>
+                <div flex>
+                    <md-input-container ng-if="!attendance.attendance" md-no-float style="padding-bottom: 0">
+                        <input ng-model="attendance.comment" placeholder="Comment" style="border: 0;" ng-blur="saveComment(attendance)">
+                    </md-input-container>
+                </div>
+                <div flex="20">
+                    <div ng-class="{green:attendance.attendance,red:!attendance.attendance}" class="md-secondary">
+                        <span ng-if="attendance.attendance">Present</span>
+                        <span ng-if="!attendance.attendance">Absent</span>
+                    </div>
+                </div>
+
+                <md-divider ng-if="!$last" ></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</section>

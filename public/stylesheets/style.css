@@ -1,0 +1,29 @@
+body{
+  font-family:  'Avenir Next', 'Segoe UI', 'Droid Sans', 'Helvetica';
+  margin: 0;
+}
+.md-button{
+  margin:0 !important;
+}
+.green{
+  color: green;
+}
+.red{
+  color: red;
+}
+input.user{
+  margin: 15px 0;
+  height: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  outline: none
+}
+input.user:focus{
+  border-color: #0000FF;
+}
+.md-button{
+  margin: 15px 0 !important;
+}
+md-checkbox{
+  margin-left: 0;
+}

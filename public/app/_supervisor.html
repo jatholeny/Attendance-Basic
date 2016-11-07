@@ -1,0 +1,30 @@
+<section ng-cloak ng-show="user.type === 'admin'">
+    <md-content layout-padding  style="border-left: 1px solid #cccccc;border-right: 1px solid #cccccc;">
+        <md-datepicker ng-model = "date" ng-change="pickdate()" md-max-date="maxDate" md-placeholder="Enter date"></md-datepicker>
+        <md-button class="md-raised md-primary" ng-click="getrequest()">Request</md-button>
+        <md-divider ></md-divider>
+        <md-list>
+            <md-list-item ng-repeat="eachuser in userlist">
+                <img ng-src="{{eachuser.photo}}" class="md-avatar" alt="{{eachuser.email}}" />
+                <div>
+                    {{ eachuser.name.first }}
+                </div>
+                <md-checkbox ng-model="eachuser.attendance" class="md-secondary" aria-label="Checkbox 1"></md-checkbox>
+            </md-list-item>
+        </md-list>
+        <div style="text-align: center;color: red">
+            <small>{{message}}</small>
+        </div>
+    </md-content>
+    <div layout="row">
+        <md-button class="md-raised md-primary" ng-click="save(userlist)" flex="100">Save</md-button>
+    </div>
+    <md-divider ></md-divider>
+    <md-list>
+        <md-list-item ng-repeat="request in requests">
+            <div>
+                {{ request.timestamp}}
+            </div>
+        </md-list-item>
+    </md-list>
+</section>

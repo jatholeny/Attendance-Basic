@@ -1,0 +1,20 @@
+<div style="padding-top: 80px;width: 100%" layout="row">
+    <div flex></div>
+    <div  flex="30" ng-cloak>
+
+        <div layout="column" >
+
+            <input type="text" placeholder="Username" ng-model="user.username" class="user" flex>
+            <input type="text" placeholder="Password" ng-model="user.password" class="user" flex>
+            <md-content>
+                Don't have an account?
+                <a ui-sref="landing">Register here</a></md-content>
+            <md-button class="md-primary md-raised" ng-click="login()" flex>Login</md-button>
+            <md-button ng-href="{{googleUrl}}" class="md-raised md-accent" flex>Login with Google</md-button>
+
+        </div>
+
+    </div>
+    <div flex></div>
+
+</div>
